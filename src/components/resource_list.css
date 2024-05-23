@@ -1,0 +1,51 @@
+/* ResourceList.css */
+
+.resource-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 56px;
+}
+
+.resource-list li {
+  margin-bottom: 20px;
+  max-width: 315px; /* Limit width for larger screens */
+}
+
+.resource-list img {
+  width: 300px;
+  height: 299px;
+  object-fit: cover;
+}
+
+.resource-list .info {
+  margin-top: 10px;
+}
+
+.resource-list .info p {
+  margin-bottom: 5px;
+}
+
+.resource-list .info .hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.resource-list .info .hashtags li {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 375px) {
+  .resource-list {
+    gap: 0px;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .resource-list li {
+    width: 100%;
+  }
+}

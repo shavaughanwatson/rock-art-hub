@@ -1,0 +1,93 @@
+/* Homepage.css */
+
+/* Base styles */
+.homepage {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+ul.hashtags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+ul.hashtags li {
+  margin-right: 10px;
+}
+
+.artwork-list,
+.resource-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.featured-artwork img {
+  width: 285px;
+  height: 365px;
+  object-fit: cover;
+}
+
+.resource-section {
+  margin-top: 40px;
+}
+
+.resource-section img {
+  width: 256px;
+  height: 292px;
+  object-fit: cover;
+}
+
+.viewbtn {
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 375px) {
+  .homepage {
+    padding: 10px;
+  }
+
+  ul {
+    display: block;
+    text-align: left;
+  }
+
+  ul li {
+    margin-bottom: 5px;
+  }
+
+  .featured-artwork img {
+    width: 100%;
+    height: auto;
+  }
+
+  .resource-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .artwork-list,
+  .resource-list {
+    display: block;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

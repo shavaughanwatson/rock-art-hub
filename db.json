@@ -1,0 +1,341 @@
+{
+  "artworks": [
+    {
+      "title": "Eternal Crystalline Symphony",
+      "author": "Aurelia Stoneheart",
+      "image": "./src/assets/Eternal_Crystalline_Symphony.png",
+      "hashtags": ["AfricanGems", "CrystalHarmony", "SymphonyOfStones"],
+      "category": "Sculptures",
+      "id": "21fe",
+      "description": "Eternal Crystalline Symphony captures the essence of African gems in a harmonious display of crystal beauty, creating a symphony of stones that resonates with timeless elegance."
+    },
+    {
+      "title": "Mountain Majesty: A Sculptor's Ode",
+      "author": "Jasper Peaks",
+      "image": "./src/assets/Mountain_Majesty_A_Sculptor's_Ode.png",
+      "hashtags": ["AfricanMountains", "SculptorsOde", "MajesticPeaks"],
+      "category": "Sculptures",
+      "id": "7c5a",
+      "description": "Mountain Majesty pays homage to African mountains, sculpting an ode to their majestic peaks in a symphony of geological artistry that echoes through the ages."
+    },
+    {
+      "title": "Surreal Quartz Dreams",
+      "author": "Terra Marblington",
+      "image": "./src/assets/Surreal_Quartz_Dreams.png",
+      "hashtags": ["AfricanQuartz", "Dreamscape", "SurrealVisions"],
+      "category": "Digital Art",
+      "id": "7b86",
+      "description": "Surreal Quartz Dreams transports viewers to a dreamlike landscape of African quartz, where surreal visions unfold in a mesmerizing display of geological artistry."
+    },
+    {
+      "title": "Echoes of Petrified Time",
+      "author": "Lyra Graniteheart",
+      "image": "./src/assets/Echoes_of_Petrified_Time.png",
+      "hashtags": ["AfricanGranite", "PetrifiedEchoes", "TimelessStone"],
+      "category": "Sculptures",
+      "id": "df8f",
+      "description": "Echoes of Petrified Time capture the essence of African granite, echoing the petrified echoes of timeless stone in a geological masterpiece that stands the test of time."
+    },
+    {
+      "title": "Celestial Geode Fantasia",
+      "author": "Orion Earthsong",
+      "image": "./src/assets/Celestial_Chorus_Mountain_Majesty.png",
+      "hashtags": ["AfricanGeodes", "CelestialFantasia", "Earthsong"],
+      "category": "Digital Art",
+      "id": "7507",
+      "description": "Celestial Geode Fantasia envisions African geodes in a celestial fantasy, harmonizing with Earthsong in a digital display of geological artistry that mesmerizes the soul."
+    },
+    {
+      "title": "Chromatic Peaks: A Mineralist's Reverie",
+      "author": "Amara Flintwalker",
+      "image": "./src/assets/Celestial_Chorus_Mountain_Majesty.png",
+      "hashtags": ["AfricanChromatics", "MineralistsReverie", "PeakDreams"],
+      "category": "Paintings",
+      "id": "21a1",
+      "description": "Chromatic Peaks paints a mineralist's reverie of African chromatics, capturing peak dreams in a painting that blends geological wonder with artistic imagination."
+    },
+    {
+      "title": "Sculpted Shores: A Coastal Collection",
+      "author": "Coraline Sandstone",
+      "image": "./src/assets/Sculpted_Shores_A_Coastal_Collection.png",
+      "hashtags": ["AfricanShores", "CoastalCollection", "SandstoneSculptures"],
+      "category": "Sculptures",
+      "id": "c3a6",
+      "description": "Sculpted Shores presents a coastal collection of African shores, sculpting sandstone sculptures that capture the essence of coastal beauty in a geological masterpiece."
+    },
+    {
+      "title": "Dreams of Dazzling Druzy",
+      "author": "Luna Gemspark",
+      "image": "/src/assets/Dreams_of_Dazzling_Druzy.png",
+      "hashtags": ["AfricanDruzy", "DazzlingDreams", "Gemsparkle"],
+      "category": "Digital Art",
+      "id": "353e",
+      "description": "Dreams of Dazzling Druzy sparkle with African druzy, dazzling the senses in a shimmering display of geological artistry that mesmerizes the soul."
+    },
+    {
+      "title": "Mountain Melodies: A Geologic Symphony",
+      "author": "Harmonia Granite",
+      "image": "./src/assets/Mountain_Melodies_A_Geologic Symphony.png",
+      "hashtags": ["AfricanMelodies", "GeologicSymphony", "GraniteHarmony"],
+      "category": "Paintings",
+      "id": "3d5c",
+      "description": "Mountain Melodies orchestrates a geologic symphony of African melodies, harmonizing granite harmony in a symphonic display of geological artistry that resonates with nature's song."
+    },
+    {
+      "title": "Emerald Elysium: Verdant Valleys",
+      "author": "Jade Rockwell",
+      "image": "./src/assets/Emerald_Elysium_Verdant_Valleys.png",
+      "hashtags": ["AfricanEmeralds", "VerdantValleys", "RockwellJade"],
+      "category": "Paintings",
+      "id": "77df",
+      "description": "Emerald Elysium paints verdant valleys of African emeralds, crafting a Rockwell jade of artistry that mesmerizes the eye and soul in a geological masterpiece."
+    },
+    {
+      "title": "Magma Muse: A Fiery Fusion",
+      "author": "Vulcan Obsidian",
+      "image": "./src/assets/Magma_Muse_A_Fiery_Fusion.png",
+      "hashtags": ["AfricanMagma", "FieryFusion", "ObsidianVulcan"],
+      "category": "Paintings",
+      "id": "0dd5",
+      "description": "Magma Muse ignites a fiery fusion of African magma, sculpting obsidian Vulcan in a geological dance of artistry that mesmerizes the eye and soul in a molten masterpiece."
+    },
+    {
+      "title": "Terraformed Tapestry: Nature's Canvas",
+      "author": "Nova Topaz",
+      "image": "./src/assets/Terraformed_Tapestry_Natures_Canvas.png",
+      "hashtags": ["AfricanTerraform", "NaturesCanvas", "TopazTapestry"],
+      "category": "Paintings",
+      "id": "9855",
+      "description": "Terraformed Tapestry weaves a nature's canvas of African terraform, crafting Topaz tapestry in a geological masterpiece that merges earth and art in harmony."
+    },
+    {
+      "title": "Echoes of Eons: Ancient Artifacts",
+      "author": "Chronos Basalt",
+      "image": "./src/assets/image.jpg",
+      "hashtags": ["AfricanEons", "AncientArtifacts", "BasaltEchoes"],
+      "category": "Illustration",
+      "id": "1983",
+      "description": "Echoes of Eons reverberate with African eons, echoing ancient artifacts in an illustrative journey through time that captures the essence of geological artistry."
+    },
+    {
+      "title": "Aurora Amethyst: Cosmic Crystalline Confluence",
+      "author": "Stellar Quartzite",
+      "image": "./src/assets/image.jpg",
+      "hashtags": ["AfricanAurora", "CosmicConfluence", "QuartziteStellar"],
+      "category": "Illustration",
+      "id": "c079",
+      "description": "Aurora Amethyst shines with cosmic crystalline confluence, blending African aurora in an illustrative display of geological artistry that mesmerizes the eye and soul."
+    },
+    {
+      "title": "Celestial Chorus: Mountain Majesty",
+      "author": "Celestia Marblerift",
+      "image": "./src/assets/Celestial_Chorus_Mountain_Majesty.png",
+      "hashtags": ["AfricanCelestial", "MountainMajesty", "MarbleriftChorus"],
+      "category": "Illustration",
+      "id": "8506",
+      "description": "Celestial Chorus sings with African celestial, harmonizing mountain majesty in an illustrative display of geological artistry that resonates with cosmic beauty."
+    },
+    {
+      "title": "Canyon's Call: Echoes of Erosion",
+      "author": "Ravine Sandheart",
+      "image": "./src/assets/Canyons_Call_Echoes_of_Erosion.png",
+      "hashtags": ["AfricanCanyons", "EchoesOfErosion", "SandheartRavine"],
+      "category": "Illustration",
+      "id": "06e3",
+      "description": "Canyon's Call echoes African canyons, illustrating echoes of erosion in a journey through time that captures the essence of geological artistry in an illustrative masterpiece."
+    },
+    {
+      "title": "Surreal Silicate Serenade",
+      "author": "Silas Stonemyst",
+      "image": "./src/assets/Surreal_Silicate_Serenade.png",
+      "hashtags": [
+        "AfricanSilicates",
+        "SurrealSerenade",
+        "StonemystSculptures"
+      ],
+      "category": "Illustration",
+      "id": "5472",
+      "description": "Surreal Silicate Serenade serenades with African silicates, painting a surreal serenade in an illustrative display of geological artistry that mesmerizes the eye and soul."
+    }
+  ],
+
+  "resources": [
+    {
+      "title": "The Intersection of Geology and Art",
+      "author": "John Smith",
+      "image": "./src/assets/Terraformed_Tapestry_Nature's_Canvas.png",
+      "hashtags": ["RiftValley", "GeologicalTapestry", "AfricanRhapsody"],
+      "category": "Geology",
+      "source": "https://www.childrensartmuseum.org/post/art-and-science-exploring-the-connection",
+      "description": "This article explores the fascinating connection between geology and art, showcasing how geological formations inspire artistic creativity. It delves into the intricate details of how geology and art intersect in African landscapes.",
+      "id": "5434bc1"
+    },
+    {
+      "title": "Geology in Art: A Geological Perspective",
+      "author": "Jane Doe",
+      "image": "https://www.artforum.com/wp-content/uploads/2015/10/article_large-178.jpg",
+      "hashtags": ["AtlasHeart", "GeologyArtists", "AfricanCelebration"],
+      "category": "Geology",
+      "source": "https://wildlifesos.org/chronological-news/plant-fossils-a-peek-into-earths-past/",
+      "description": "This article provides a unique geological perspective on the role of art in representing geological formations. It discusses how artists capture the essence of geological features in their artwork.",
+      "id": "1234xvvc5"
+    },
+    {
+      "title": "Artistic Inspiration from Geological Formations",
+      "author": "Alex Johnson",
+      "image": "https://images.ctfassets.net/szez98lehkfm/6bp1rrms8onAYo0KOl8cgG/f69fcce272abdf56b66ff09a750f72d9/MyIC_Article_93446?w=1106&h=622&fm=webp&fit=fill",
+      "hashtags": ["AfricanMinerals", "HiddenGems", "GeologyMarvels"],
+      "category": "Geology",
+      "source": "https://www.linkedin.com/pulse/art-geology-jan-freedman-0jujf/",
+      "description": "This article explores how geological formations serve as a source of inspiration for artists. It highlights the beauty and complexity of geological features and their impact on artistic expression.",
+      "id": "987dg465"
+    },
+    {
+      "title": "The Role of Geology in Landscape Art",
+      "author": "Sarah Thompson",
+      "image": "./src/assets/Earth's_Canvas_ Geology_as_the_Ultimate_Artistic_Medium.png",
+      "hashtags": ["GeologicalVanguard", "AfricanArtists", "ArtisticLandscape"],
+      "category": "Geology",
+      "source": "https://www.bedfordfineartgallery.com/highlights_article_3.html",
+      "description": "This article discusses the significant role that geology plays in shaping landscape art. It explores how geological features influence artistic interpretations of natural landscapes.",
+      "id": "543dfg81"
+    },
+    {
+      "title": "Geological Wonders: A Photographer's Perspective",
+      "author": "Michael Brown",
+      "image": "./src/assets/Echoes_of_Earth_A_Journey_Through_Geology_Art.png",
+      "hashtags": ["OreToOrnament", "ArtisticInnovation", "GeologicalPioneers"],
+      "category": "Geology",
+      "source": "https://www.apollo-magazine.com/geology-modern-contemporary-art/",
+      "description": "This article showcases the stunning geological wonders captured through the lens of a photographer. It explores how photography can reveal the beauty and complexity of geological formations.",
+      "id": "129fgh45"
+    },
+    {
+      "title": "The Art of Rocks: A Geologist's Perspective",
+      "author": "Emily Davis",
+      "image": "./src/assets/Lapidary_Landscapes_African_Geologists'_Brush.png",
+      "hashtags": [
+        "GeologyArtIntersection",
+        "AfricanMountains",
+        "InspirationPeak"
+      ],
+      "category": "Geology",
+      "source": "https://www.denverartmuseum.org/en/blog/geologists-take-monet",
+      "description": "This article offers a geologist's perspective on the artistry found in rocks and geological formations. It discusses how geologists appreciate the natural beauty and artistic qualities of rocks.",
+      "id": "98dg765"
+    },
+    {
+      "title": "Geological Landscapes in Painting",
+      "author": "David Wilson",
+      "image": "./src/assets/Echoes_of_Earth_A_Journey_Through_Geology_Art.png",
+      "hashtags": ["RockOfAges", "GeologyLegacy", "ArtMuseums"],
+      "category": "Geology",
+      "source": "https://www.jstor.org/stable/1181263",
+      "description": "This article explores how painters depict geological landscapes in their artwork. It discusses the techniques artists use to capture the essence of geological formations on canvas.",
+      "id": "543fg22"
+    },
+    {
+      "title": "Sculpting the Earth: The Art of Geological Mapping",
+      "author": "Robert Jones",
+      "image": "./src/assets/Exploring_the_Cosmic_Beauty_of_Geological_Formations.png",
+      "hashtags": [
+        "MineralogicalMosaics",
+        "AfricanArtExpression",
+        "GeologicalJourney"
+      ],
+      "category": "Geology",
+      "source": "https://tectonics.stanford.edu/galleries/land-art",
+      "description": "This article explores the artistic aspects of geological mapping. It discusses how geologists use maps to visually represent geological features and their significance in scientific research.",
+      "id": "126fgh55"
+    },
+    {
+      "title": "The Geology of Gemstones: From Mine to Masterpiece",
+      "author": "Laura Miller",
+      "image": "./src/assets/Lapidary_Landscapes_African_Geologists'_Brush.png",
+      "hashtags": [
+        "LapidaryLandscapes",
+        "ArtisticBrilliance",
+        "GeologistsBrush"
+      ],
+      "category": "Geology",
+      "source": "https://www.fashionindustrynetwork.com/profiles/blogs/the-journey-of-a-gemstone-from-mine-to-masterpiece",
+      "description": "This article explores the geological origins of gemstones and their journey from the earth's crust to becoming artistic masterpieces. It discusses the geological processes that form gemstones and their significance in jewelry.",
+      "id": "98fdd765"
+    },
+    {
+      "title": "The Influence of Geology on Architecture",
+      "author": "Mark Taylor",
+      "image": "./src/assets/African_Alchemy_Geology's_Influence_on_Artistic_Expression.png",
+      "hashtags": [
+        "AfricanAlchemy",
+        "ArtisticMasterpieces",
+        "GeoscientistCrafts"
+      ],
+      "category": "Geology",
+      "source": "https://drawingmatter.org/architecture-and-geology/",
+      "description": "This article examines the impact of geological concepts on architectural design. It discusses how architects incorporate geological principles into their designs and the aesthetic appeal of geological materials in architecture.",
+      "id": "543dgh21"
+    },
+    {
+      "title": "Art and Science: Exploring the Connection",
+      "author": "Emma White",
+      "image": "./src/assets/Sculpting_Time_Geology_Art_as_a_Reflection_of_Eons.png",
+      "hashtags": ["SculptingTheEarth", "GeologistsImpact", "ArtisticWorld"],
+      "category": "Geology",
+      "source": "https://www.psychologytoday.com/ca/blog/mind-brain-and-value/202012/whats-the-connection-between-art-and-science",
+      "description": "This article explores the intricate relationship between art and science. It discusses how artists and scientists collaborate to create artworks that depict scientific concepts and principles.",
+      "id": "123sdf45"
+    },
+    {
+      "title": "Geological Artifacts: A Window into Earth's History",
+      "author": "Olivia Clark",
+      "image": "./src/assets/The_Intersection_of_Geology_and_Art.png",
+      "hashtags": ["CradleOfCreativity", "GeologyVision", "ArtisticRole"],
+      "category": "Geology",
+      "source": "https://www.livescience.com/planet-earth/surprise-discovery-of-worlds-2nd-deepest-blue-hole-could-provide-window-into-earths-history",
+      "description": "This article explores how geological artifacts provide insights into Earth's history. It discusses the significance of geological artifacts in understanding geological processes and the evolution of the planet.",
+      "id": "9gfd8765"
+    },
+    {
+      "title": "The Art of Fossil Hunting: A Geological Adventure",
+      "author": "Peter Green",
+      "image": "./src/assets/The_Art_of_Rocks A_Geologist's_Perspective.png",
+      "hashtags": ["GeologicalGems", "PreciousArtifacts", "AfricanGeology"],
+      "category": "Geology",
+      "source": "https://www.jstor.org/stable/24887717",
+      "description": "This article explores the exciting world of fossil hunting from a geological perspective. It discusses the tools and techniques used by fossil hunters and the significance of fossils in understanding Earth's history.",
+      "id": "54dg321"
+    },
+    {
+      "title": "Geological Illustration: Bringing Rocks to Life",
+      "author": "Rachel Brown",
+      "image": "./src/assets/The_Intersection_of_Geology_and_Art.png",
+      "hashtags": ["RiftValley", "GeologicalTapestry", "AfricanRhapsody"],
+      "category": "Geology",
+      "source": "https://www.theguardian.com/artanddesign/gallery/2015/jun/03/rocks-in-the-sky-a-geological-mystery-in-pictures",
+      "description": "This article explores the art of geological illustration. It discusses how illustrators bring rocks and geological formations to life through detailed and accurate drawings.",
+      "id": "123dg45"
+    },
+    {
+      "title": "The Geological Time Scale: A Visual Journey",
+      "author": "William Anderson",
+      "image": "./src/assets/The_Intersection_of_Geology_and_Art.png",
+      "hashtags": ["RiftValley", "GeologicalTapestry", "AfricanRhapsody"],
+      "category": "Geology",
+      "source": "https://www.nps.gov/subjects/geology/time-scale.htm",
+      "description": "This article takes readers on a visual journey through the geological time scale. It discusses the different eras and periods of Earth's history and the significance of geological time in understanding Earth's past.",
+      "id": "98sg765"
+    },
+    {
+      "title": "Artistic Interpretations of Plate Tectonics",
+      "author": "Sophia Garcia",
+      "image": "./src/assets/The_Intersection_of_Geology_and_Art.png",
+      "hashtags": ["RiftValley", "GeologicalTapestry", "AfricanRhapsody"],
+      "category": "Geology",
+      "source": "https://www.youraga.ca/sites/default/files/file/2018-08/Plate%20Tectonics%20Interpretive%20Guide.pdf",
+      "description": "This article explores how artists interpret and depict plate tectonics in their artwork. It discusses the creative ways in which artists visualize geological processes and the Earth's dynamic surface.",
+      "id": "54njf321"
+    }
+  ]
+}
+

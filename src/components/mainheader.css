@@ -1,0 +1,108 @@
+/* Header.css */
+.header {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  height: 350px;
+  background-image: url('../assets/banner_img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid blue 1px;
+}
+
+.left-links ul,
+.right-links ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.left-links ul li,
+.right-links ul li {
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.15em;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo h1 {
+  font-size: 64px;
+}
+
+.logo p {
+  font-size: 22px;
+}
+
+.sign-up {
+  background-color: #33333300;
+  border: solid 1px #6acb91;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px;
+  width: 534px;
+  height: 12%;
+  border-radius: 4px 0px 0px 4px;
+  border: none;
+}
+
+.search-bar button {
+  padding: 17.2px;
+  border: none;
+  background-color: #6acb91;
+}
+
+@media (max-width: 375px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav {
+    flex-direction: column;
+  }
+
+  .logo h1 {
+    font-size: 34px;
+  }
+
+  .logo p {
+    font-size: 12px;
+  }
+
+  .left-links,
+  .right-links {
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    margin-top: 10px;
+
+    height: 150px;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .search-bar button {
+    padding: 14px;
+  }
+}
