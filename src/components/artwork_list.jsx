@@ -1,7 +1,6 @@
 import './artwork_list.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../api';
 
 const ArtworkList = () => {
   const [artworks, setArtworks] = useState([]);
@@ -20,19 +19,6 @@ const ArtworkList = () => {
 
     []
   );
-
-  useEffect(() => {
-    const fetchArticle = async () => {
-      try {
-        const response = await api.get('/artworks'); // Assuming you want to fetch the article with ID 1
-        console.log(response.data.data); // Adjust according to Strapi response format
-      } catch (err) {
-        throw Error('Error fetching article:', err);
-      }
-    };
-
-    fetchArticle();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
 
   return (
     <ul className="artwork-list">

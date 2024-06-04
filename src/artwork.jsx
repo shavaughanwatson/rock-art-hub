@@ -4,9 +4,8 @@ import './artwork.css';
 const ArtworkPage = () => {
   return (
     <div className="artwork-page">
-      <div className="artwork-title">
-        <h1>Artwork</h1>
-        <hr />
+      <div className="category-menu">
+        <h1>Categories</h1>
         <ul className="artwork-categories">
           <li>#illustration</li>
           <li>#digitalart</li>
@@ -16,6 +15,11 @@ const ArtworkPage = () => {
         </ul>
       </div>
       <div className="artwork">
+        <div className="artwork-title">
+          <h1>Artwork</h1>
+          <p>Check out our gallery with various arts about geology.</p>
+          <hr />
+        </div>
         <ArtworkList />
       </div>
       <div className="pagination">{/* Pagination components */}</div>

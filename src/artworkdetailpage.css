@@ -1,8 +1,8 @@
 .artwork-detail {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
   padding: 20px;
+  flex-direction: column;
 }
 
 .artwork-image {
@@ -10,13 +10,10 @@
   justify-content: center;
 }
 
-.artwork-image img {
-  width: 50%;
-  height: 500px;
-}
-
 .artwork-info {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .artwork-info h2 {
@@ -28,12 +25,19 @@
   margin-bottom: 20px;
 }
 
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+
 .hashtags {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   list-style-type: none;
-  padding: 0;
+  border: solid 1px blue;
 }
 
 .hashtags li {
@@ -56,6 +60,9 @@
 
   .artwork-image {
     width: 100%;
+  }
+  .menu-list {
+    justify-content: center;
   }
 
   .artwork-image img {

@@ -1,5 +1,7 @@
 import './artworkdetailpage.css'; // You can define your styles in this file
 import { useLoaderData } from 'react-router-dom';
+import { FcLike } from 'react-icons/fc';
+import { PiBookmarkSimpleFill } from 'react-icons/pi';
 
 const ArtworkDetail = () => {
   const artwork = useLoaderData();
@@ -9,9 +11,22 @@ const ArtworkDetail = () => {
         <div className="artwork-image">
           <img src={artwork.image} alt="Artwork" />
         </div>
+        <div className="artwork-menu">
+          <ul className="menu-list">
+            <li>
+              <FcLike size={30} /> <p>50</p>
+            </li>
+            <li>
+              <PiBookmarkSimpleFill size={30} />
+              <p>50</p>
+            </li>
+          </ul>
+        </div>
         <div className="artwork-info">
           <h2>{artwork.title}</h2>
+          <p>Made by {artwork.author}</p>
           <p>{artwork.description}</p>
+
           <ul className="hashtags">
             {artwork.hashtags.map((tag, index) => (
               <li key={index}>#{tag}</li>
