@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './resource_list.css';
+import './search_list.css';
 
 const FeatureResourceList = () => {
   const [resources, setResources] = useState([]);
@@ -8,7 +8,7 @@ const FeatureResourceList = () => {
     () =>
       async function () {
         // Fetch or import your JSON data here
-        const response = await fetch(`http://localhost:8000/resources`);
+        const response = await fetch(`http://localhost:3000/resources`);
         const data = await response.json();
         console.log(data);
 

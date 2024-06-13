@@ -10,7 +10,7 @@ import RootLayout from './RootLayout';
 import AboutUs from './about_us';
 import Home from './home';
 import Artwork from './artwork';
-import Resources from './resources';
+import Search from './search';
 import ArtworkDetail, { loader as ArtDetailData } from './artworkdetailpage';
 import ResourceDetail, {
   loader as ResourceDetailData,
@@ -34,9 +34,10 @@ const router = createBrowserRouter([
         element: <Artwork />,
       },
       {
-        path: '/resource',
-        element: <Resources />,
+        path: '/search',
+        element: <Search />,
       },
+
       {
         path: '/:id', // defaults to the first json document
         loader: ArtDetailData,

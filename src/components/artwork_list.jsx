@@ -13,8 +13,6 @@ const ArtworkList = () => {
 
         console.log(response);
         console.log(response.data.data); // Adjust according to Strapi response format
-        console.log(response.data.data[0]); // Adjust according to Strapi response format
-        console.log(response.data.data[0].attributes);
 
         const artworkSampleData = response.data.data;
         setArtworks(artworkSampleData);
@@ -24,7 +22,7 @@ const ArtworkList = () => {
     };
 
     fetchArticle();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  }, []); // Empty dependency array means this effect runs once when the component
 
   return (
     <ul className="artwork-list">

@@ -1,7 +1,15 @@
 import './mainheader.css'; // You can define your styles in this file
 import { Link } from 'react-router-dom';
+import { SearchContext } from '../RootLayout';
+import { useContext } from 'react';
 
 function MainHeader() {
+  const query = useContext(SearchContext);
+
+  function handleQueryText(e) {
+    query.updateQuery(e.target.value);
+  }
+
   return (
     <div className="header">
       <nav className="main-nav">
@@ -13,13 +21,9 @@ function MainHeader() {
             <Link to="/artwork">
               <li>Artwork</li>
             </Link>
-            <Link to="/resource">
-              <li>Resources</li>
-            </Link>
           </ul>
         </div>
         <div className="logo">
-          {/* Your logo image or text goes here */}
           <Link to="/">
             <h1>ROCK ART HUB</h1>
           </Link>
@@ -38,8 +42,13 @@ function MainHeader() {
       </nav>
 
       <div className="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button>
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={handleQueryText}
+          value={query.queryText}
+        />
+        <button onClick={query.loadsearchProducts}>
           <i className="fa fa-search"></i>
         </button>
       </div>

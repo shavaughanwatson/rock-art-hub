@@ -1,5 +1,5 @@
 import './resources.css';
-import ResourceList from './components/resource_list';
+import ResourceList from './components/search_list';
 
 const ResourcePage = () => {
   return (

@@ -8,7 +8,7 @@ const FeatureArtworkList = () => {
     () =>
       async function () {
         // Fetch or import your JSON data here
-        const response = await fetch(`http://localhost:8000/artworks`);
+        const response = await fetch(`http://localhost:3000/artworks`);
         const data = await response.json();
         console.log(data);
 
