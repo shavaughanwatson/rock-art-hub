@@ -4,16 +4,105 @@ import Footer from './components/footer.jsx';
 import { createContext } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import authService from './authService';
+import { Link } from 'react-router-dom';
 
-export const SearchContext = createContext();
+export const MainHeaderContext = createContext();
 
 function RootLayout() {
+  const [showSignupModal, setShowSignupModal] = useState(false);
+  const [showProfileModal, setProfileModal] = useState(false);
+
+  const openSignupModal = e => {
+    e.preventDefault();
+    setShowSignupModal(true);
+  };
+
+  const closeSignupModal = () => {
+    setShowSignupModal(false);
+  };
+
+  const openProfileModal = e => {
+    e.preventDefault();
+    setProfileModal(true);
+  };
+
+  const closeProfileModal = () => {
+    setProfileModal(false);
+  };
+
   const [query, setQuery] = useState('');
+  const [isLoggedIn, setisLoggedIn] = useState(false); // Track user authentication state
+  const [user, setUser] = useState(null); // Track user authentication state
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [firstName, setfirstName] = useState('');
+  const [lastName, setlastName] = useState('');
+  const [dateOfBirth, setdateOfBirth] = useState('');
+  const [occupation, setoccupation] = useState('');
+  const [avatar, setavatar] = useState('');
+  const [bio, setbio] = useState('');
 
   const navigate = useNavigate();
 
   const handleQuery = e => {
     setQuery(e);
+  };
+
+  const handleSignup = async e => {
+    e.preventDefault();
+    try {
+      const userData = await authService.signup(
+        username,
+        email,
+        password,
+        firstName,
+        lastName,
+        dateOfBirth,
+        occupation,
+        avatar,
+        bio
+      );
+      setUser(userData);
+
+      setisLoggedIn(true);
+      closeSignupModal();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleEditProfile = async e => {
+    e.preventDefault();
+    const newUserData = await authService.edit(
+      firstName,
+      lastName,
+      occupation,
+      bio
+    );
+    setUser(newUserData);
+  };
+
+  const handleLogin = async e => {
+    e.preventDefault();
+    try {
+      const userData = await authService.login(email, password);
+      setUser(userData);
+      console.log(userData.user);
+
+      setisLoggedIn(true);
+      closeSignupModal();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setUser(null);
+    setisLoggedIn(false);
+    console.log('User logged out');
   };
 
   async function goToSearchPage() {
@@ -25,17 +114,67 @@ function RootLayout() {
   }
 
   return (
-    <SearchContext.Provider
+    <MainHeaderContext.Provider
       value={{
-        queryText: query,
         updateQuery: handleQuery,
+        openSignupModal: openSignupModal,
+        closeSignupModal: closeSignupModal,
+        openProfileModal: openProfileModal,
+        closeProfileModal: closeProfileModal,
+        handleSignup: handleSignup,
+        handleLogin: handleLogin,
+        handleLogout: handleLogout,
+        handleEditProfile: handleEditProfile,
         loadsearchProducts: goToSearchPage,
+        setUser: setUser,
+        setUsername: setUsername,
+        setEmail: setEmail,
+        setPassword: setPassword,
+        setfirstName: setfirstName,
+        setlastName: setlastName,
+        setdateOfBirth: setdateOfBirth,
+        setoccupation: setoccupation,
+        setavatar: setavatar,
+        setbio: setbio,
+        showSignupModal: showSignupModal,
+        showProfileModal: showProfileModal,
+        isLoggedIn: isLoggedIn,
+        queryText: query,
+        username: username,
+        email: email,
+        password: password,
+        firstName: firstName,
+        lastName: lastName,
+        dateOfBirth: dateOfBirth,
+        occupation: occupation,
+        bio: bio,
+        avatar: avatar,
+        user: user,
       }}
     >
       <MainHeader />
-      <Outlet />
+      <div className="outlet-wrapper">
+        <div className="category-menu">
+          <h1>Menu</h1>
+
+          <ul className="menu-links">
+            <Link to="/artwork">
+              <li>
+                <p>Explore Art 🎨</p>
+              </li>
+            </Link>
+
+            <Link to="/about">
+              <li>
+                <p>About Us ❔</p>
+              </li>
+            </Link>
+          </ul>
+        </div>
+        <Outlet />
+      </div>
       <Footer />
-    </SearchContext.Provider>
+    </MainHeaderContext.Provider>
   );
 }
 export default RootLayout;

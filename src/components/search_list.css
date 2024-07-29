@@ -2,8 +2,6 @@
 
 .resource-list {
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
   gap: 30px;
   margin-top: 56px;
 }
@@ -24,17 +22,6 @@
 }
 
 .resource-list .info p {
-  margin-bottom: 5px;
-}
-
-.resource-list .info .hashtags {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-}
-
-.resource-list .info .hashtags li {
-  margin-right: 5px;
   margin-bottom: 5px;
 }
 

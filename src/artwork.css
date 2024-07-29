@@ -4,18 +4,20 @@
   text-align: center;
   padding: 20px;
   display: flex;
+  width: 100%;
 }
 
 .artwork {
   padding: 8px;
+  width: 100%;
 }
 
 .artwork-title {
   margin-bottom: 20px;
 }
 
-.category-menu {
-  padding: 8px;
+.artwork hr {
+  margin-top: 24px;
 }
 
 .category-menu h1 {
@@ -24,10 +26,9 @@
 
 .artwork-categories {
   list-style: none;
-  color: whitesmoke;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 100;
-  letter-spacing: 0.15em;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
 .artwork-categories h1 {
@@ -39,6 +40,23 @@
   background-color: #6d7798;
   padding: 12px 30px 12px 30px;
   border-radius: 6px;
+}
+
+.artwork-categories button {
+  padding: 16px;
+  background-color: #6d7798;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.15em;
+}
+
+.artwork-categories button:hover {
+  background-color: #7086ce;
+  transition: 0.3s;
 }
 
 @media (max-width: 375px) {

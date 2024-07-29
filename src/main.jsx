@@ -11,6 +11,7 @@ import AboutUs from './about_us';
 import Home from './home';
 import Artwork from './artwork';
 import Search from './search';
+import ProfilePage from './profile_page';
 import ArtworkDetail, { loader as ArtDetailData } from './artworkdetailpage';
 import ResourceDetail, {
   loader as ResourceDetailData,
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: <Search />,
+      },
+
+      {
+        path: '/profile',
+        element: <ProfilePage />,
       },
 
       {

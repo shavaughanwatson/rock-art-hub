@@ -14,8 +14,15 @@ body {
 }
 
 h1 {
-  font-family: 'Nothing You Could Do', cursive;
+  font-family: 'Work Sans', sans-serif;
   color: whitesmoke;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  color: whitesmoke;
+  font-weight: 600;
 }
 
 p {
@@ -23,6 +30,20 @@ p {
   font-family: 'Work Sans', sans-serif;
   font-weight: 100;
   letter-spacing: 0.15em;
+}
+
+.outlet-wrapper {
+  display: flex;
+}
+
+.category-menu {
+  padding: 8px;
+  text-align: center;
+  width: 190px;
+}
+
+.menu-links li {
+  margin-top: 12px;
 }
 
 .cta-btn {

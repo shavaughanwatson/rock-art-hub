@@ -1,0 +1,70 @@
+.modal-container {
+  display: flex;
+  height: 100%;
+}
+
+.cta-section,
+.form-section {
+  width: 50%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#{
+  width: 100%;
+}
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta-section h1 {
+  margin-bottom: 10px;
+  color: rgb(48, 48, 48);
+}
+
+.cta-section p {
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.cta-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}

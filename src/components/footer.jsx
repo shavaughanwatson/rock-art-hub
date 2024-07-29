@@ -8,13 +8,6 @@ const Footer = () => {
         <Link to="/about">
           <p>About Us</p>
         </Link>
-        <Link to="/artwork">
-          <p>Artwork</p>
-        </Link>
-
-        <Link to="/resources">
-          <p>Resources</p>
-        </Link>
       </div>
       <div className="logo">
         {/* Your logo image or text goes here */}
@@ -28,8 +21,6 @@ const Footer = () => {
         <ul>
           <li>Instagram</li>
           <li>LinkedIn</li>
-          <li>Product Hunt</li>
-          <li>Facebook</li>
         </ul>
       </div>
     </footer>

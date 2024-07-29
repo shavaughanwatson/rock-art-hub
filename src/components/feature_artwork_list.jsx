@@ -26,11 +26,6 @@ const FeatureArtworkList = () => {
           <div className="info">
             <p className="title">{artwork.title}</p>
             <p className="author">{artwork.author}</p>
-            <ul className="hashtags">
-              {artwork.hashtags.map((hashtag, index) => (
-                <li key={index}>#{hashtag}</li>
-              ))}
-            </ul>
           </div>
         </li>
       ))}

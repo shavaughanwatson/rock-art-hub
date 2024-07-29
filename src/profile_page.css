@@ -1,0 +1,18 @@
+.wrapper {
+  background-color: sienna;
+  width: 100%;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+}
+.profile-pic {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-info {
+  flex-basis: 50%;
+}

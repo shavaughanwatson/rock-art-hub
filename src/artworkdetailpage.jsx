@@ -1,62 +1,105 @@
 import './artworkdetailpage.css'; // You can define your styles in this file
 import { useLoaderData } from 'react-router-dom';
-import { FcLike } from 'react-icons/fc';
-import { PiBookmarkSimpleFill } from 'react-icons/pi';
+import axios from 'axios';
+import { API_KEY } from './util.js';
+import { useState, useContext, useEffect } from 'react';
+import CommentList from './components/comment_list';
+import UnAuthCommentList from './components/un_auth_comment_list';
+import CommentForm from './components/comment_form';
 import api from './api';
+import { MainHeaderContext } from './RootLayout';
 
 const ArtworkDetail = () => {
   const artwork = useLoaderData();
+  const user = useContext(MainHeaderContext);
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:1337/api/thoughts?filters[artwork][id][$eq]=${artwork.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${API_KEY}`,
+            },
+          }
+        );
+        console.log(response.data.data);
+
+        setComments(response.data.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+        setError('An error occurred while fetching the comments.');
+        setLoading(false);
+      }
+    };
+
+    fetchComments();
+  }, [artwork.id]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
     <>
-      <div className="artwork-detail">
-        <div className="artwork-image">
-          <img
-            src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
-            alt="geology artwork"
-          />
-        </div>
-        <div className="artwork-menu">
-          <ul className="menu-list">
-            <li>
-              <FcLike size={30} /> <p>{artwork.attributes.Likes}</p>
-            </li>
-            <li>
-              <PiBookmarkSimpleFill size={30} />
-              <p>50</p>
-            </li>
-          </ul>
-        </div>
-
+      <div className="artwork-detail-wrapper">
         <div className="artwork-info">
-          <h2>{artwork.attributes.Title}</h2>
-          <p>Made by {artwork.attributes.Author}</p>
-          <p>Posted at {artwork.attributes.createdAt}</p>
+          <div className="artwork-image">
+            <img
+              src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
+              alt="geology artwork"
+            />
+          </div>
 
-          <p>{artwork.attributes.Description}</p>
+          <div className="artwork-specs">
+            <h2>{artwork.attributes.title}</h2>
+            <p className="author">Made by {artwork.attributes.author}</p>
+            <p>Posted at {artwork.attributes.createdAt}</p>
 
-          <ul className="hashtags">
-            {artwork.attributes.Hashtags.map((tag, index) => (
-              <li key={index}>#{tag}</li>
-            ))}
-          </ul>
+            <p>{artwork.attributes.description}</p>
+          </div>
         </div>
+
+        {user.user ? (
+          <div>
+            <CommentForm
+              artworkId={artwork.id}
+              user={user.user.user}
+              setComments={setComments}
+              comments={comments}
+            />
+            <CommentList
+              setComments={setComments}
+              comments={comments}
+              user={user.user.user}
+            />
+          </div>
+        ) : (
+          <div>
+            <h1>Need to login in to comment</h1>
+            <UnAuthCommentList setComments={setComments} comments={comments} />
+          </div>
+        )}
       </div>
     </>
   );
 };
 
 export async function loader({ params }) {
-  const response = await api.get(`/artworks/${params.id}?populate=*`); // Assuming you want to fetch the article with ID 1
+  const response = await api.get(`/artworks/${params.id}?populate=*`);
   const data = response.data.data;
   console.log(response);
   console.log(data); // Adjust according to Strapi response format
 
-  /*
-  const response = await fetch(
-    `http://localhost:1337/api/artwork/${params.id}?populate=*`
-  );
-  const data = await response.json();
-  */
   return data;
 }
 export default ArtworkDetail;

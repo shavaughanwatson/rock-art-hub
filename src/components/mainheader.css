@@ -3,7 +3,7 @@
   padding: 10px 20px;
   background-color: #333;
   color: white;
-  height: 350px;
+  height: 200px;
   background-image: url('../assets/banner_img.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,6 +21,8 @@
   list-style-type: none;
   display: flex;
   gap: 20px;
+
+  align-items: center;
 }
 
 .left-links ul li,
@@ -31,16 +33,12 @@
   letter-spacing: 0.15em;
 }
 
-.logo {
-  text-align: center;
-}
-
 .logo h1 {
-  font-size: 64px;
+  font-size: 34px;
 }
 
 .logo p {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .sign-up {
@@ -50,13 +48,12 @@
 
 .search-bar {
   display: flex;
-  justify-content: center;
-  height: 200px;
+
   align-items: center;
 }
 
 .search-bar input {
-  padding: 5px;
+  padding: 8px;
   width: 534px;
   height: 12%;
   border-radius: 4px 0px 0px 4px;
@@ -64,9 +61,25 @@
 }
 
 .search-bar button {
-  padding: 17.2px;
+  padding: 16px;
   border: none;
   background-color: #6acb91;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 15px;
+}
+
+.user h2 {
+  font-size: 14px;
+}
+
+.user img {
+  height: 50px;
+  border-radius: 250px;
 }
 
 @media (max-width: 375px) {
