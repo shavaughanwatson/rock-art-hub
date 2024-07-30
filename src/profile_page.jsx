@@ -6,6 +6,7 @@ import { MainHeaderContext } from './RootLayout';
 import Modal from 'react-modal';
 import EditProfileForm from './components/edit_profile_form';
 import PostForm from './components/post_form';
+import { FaPlus } from 'react-icons/fa6';
 
 function ProfilePage() {
   const login = useContext(MainHeaderContext);
@@ -106,35 +107,52 @@ function ProfilePage() {
           </div>
 
           <div className="profile-info">
-            <h2>{firstName}</h2>
-            <h2>{lastName}</h2>
-            <h2>{occupation}</h2>
+            <h2>
+              {firstName} {lastName}
+            </h2>
+
+            <h3>{occupation}</h3>
+            <h4>Bio:</h4>
             <p>{bio}</p>
-            <button className="cta-btn login" onClick={openEditProfileModal}>
-              Edit
-            </button>
+            <div className="edit-btn-box">
+              <button className="cta-btn login" onClick={openEditProfileModal}>
+                Edit
+              </button>
+            </div>
           </div>
         </div>
+
         <div className="user-artworks">
-          <h3>My Artwork</h3>
-          <button className="cta-btn login" onClick={openPostForm}>
-            Post
-          </button>
+          <h3>
+            Artwork
+            <button className="cta-btn login" onClick={openPostForm}>
+              Post Artwork <FaPlus />
+            </button>
+          </h3>
+
           <ul className="artwork-list">
-            {artworks.map((artwork, index) => (
-              <li key={index}>
-                <img
-                  src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
-                  alt="Artwork"
-                />
-                <div className="info">
-                  <p className="title">{artwork.attributes.title}</p>
-                  <button onClick={() => handleDelete(artwork.id)}>
-                    Delete
-                  </button>
-                </div>
-              </li>
-            ))}
+            {artworks.length === 0 ? (
+              <>
+                <p>No artwork has been posted yet! </p>
+              </>
+            ) : (
+              <>
+                {artworks.map((artwork, index) => (
+                  <li key={index}>
+                    <img
+                      src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
+                      alt="Artwork"
+                    />
+                    <div className="info">
+                      <p className="title">{artwork.attributes.title}</p>
+                      <button onClick={() => handleDelete(artwork.id)}>
+                        Delete
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </>
+            )}
           </ul>
         </div>
       </div>
@@ -144,6 +162,23 @@ function ProfilePage() {
         onRequestClose={closeEditProfileModal}
         contentLabel="Signup Modal"
         ariaHideApp={false}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(255, 255, 255, 0.75)',
+          },
+          content: {
+            width: '50%',
+            height: '500px',
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            overflow: 'hidden',
+            background: '#241e1f',
+          },
+        }}
       >
         <EditProfileForm handleEditProfile={handleEditProfile} />
       </Modal>
@@ -153,6 +188,23 @@ function ProfilePage() {
         onRequestClose={closePostForm}
         contentLabel="Signup Modal"
         ariaHideApp={false}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(255, 255, 255, 0.75)',
+          },
+          content: {
+            width: '50%',
+            height: '500px',
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            overflow: 'hidden',
+            background: '#241e1f',
+          },
+        }}
       >
         <PostForm setArtworks={setArtworks} />
       </Modal>

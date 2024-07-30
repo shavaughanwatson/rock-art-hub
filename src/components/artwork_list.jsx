@@ -12,8 +12,10 @@ const ArtworkList = ({ artworks }) => {
                 src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
                 alt="Artwork"
               />
+
               <p className="title">{artwork.attributes.title}</p>
               <p className="author">{artwork.attributes.author}</p>
+              <p>{artwork.attributes.thoughts.data.length} Comments</p>
             </div>
           </Link>
         </li>

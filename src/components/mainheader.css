@@ -61,9 +61,10 @@
 }
 
 .search-bar button {
-  padding: 16px;
   border: none;
   background-color: #6acb91;
+  padding: 7.7px;
+  border-radius: 0px 6px 6px 0px;
 }
 
 .user {

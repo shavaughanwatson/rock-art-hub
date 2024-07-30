@@ -8,6 +8,7 @@ function EditForm({ handleEditProfile }) {
     <div>
       <form onSubmit={handleEditProfile}>
         <div className="form-group">
+          <h2>Edit Profile</h2>
           <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
@@ -55,7 +56,9 @@ function EditForm({ handleEditProfile }) {
             required
           />
         </div>
-        <button type="submit">Update</button>
+        <button type="submit" className="loginbtn">
+          Update
+        </button>
       </form>
     </div>
   );

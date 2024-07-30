@@ -7,27 +7,55 @@
 .form-section {
   width: 50%;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-#{
-  width: 100%;
+.form-group label {
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 100;
+}
+
+.loginbtn {
+  background-color: #6acb91;
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+}
+
+.signUpbtn {
+  background-color: #6acb9101;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  color: whitesmoke;
+  padding: 12px 12px 12px 12px;
+  margin-top: 12px;
+  border-radius: 4px;
+  border: solid #6acb91 0.5px;
+}
+
+.loginbtn:hover {
+  background-color: #429c66;
+  transition: 0.3s;
 }
 
 .cta-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  background-image: linear-gradient(#33737dac, #1c222786),
+    url('/src/assets/modal_background.webp');
 }
 
 .cta-section h1 {
   margin-bottom: 10px;
-  color: rgb(48, 48, 48);
+  color: whitesmoke;
 }
 
 .cta-section p {
   margin-bottom: 20px;
-  color: rgb(0, 0, 0);
+  color: whitesmoke;
 }
 
 .cta-section button {
@@ -35,8 +63,36 @@
   font-size: 16px;
 }
 
+.form-section {
+  padding: 20px;
+}
+
+.form-section input {
+  border: none;
+  border-radius: 4px;
+}
+
+.form-section textarea {
+  border: none;
+  border-radius: 4px;
+}
+
+.form-section select {
+  border: none;
+  border-radius: 4px;
+}
+
 .form-section h2 {
   margin-bottom: 20px;
+}
+
+.form-group-1 {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group-1 div {
+  flex-basis: 33%;
 }
 
 .form-group {

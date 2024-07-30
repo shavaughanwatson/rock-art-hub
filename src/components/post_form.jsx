@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { MainHeaderContext } from '../RootLayout';
 import axios from 'axios';
 import { API_KEY } from '../util';
+import './post_form.css';
 
 function PostForm({ setArtworks }) {
   const [title, setTitle] = useState('');
@@ -52,10 +53,12 @@ function PostForm({ setArtworks }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleArtworkSubmit}>
+    <div className="post-form-wrapper">
+      <form onSubmit={handleArtworkSubmit} className="post-form">
+        <h2>Post your artwork</h2>
         <div>
           <label>Title</label>
+          <br></br>
           <input
             type="text"
             value={title}
@@ -63,19 +66,26 @@ function PostForm({ setArtworks }) {
             required
           />
         </div>
+
         <div>
           <label>Description</label>
+          <br></br>
           <textarea
             value={description}
             onChange={e => setDescription(e.target.value)}
             required
           />
         </div>
+
         <div>
           <label>Image</label>
+          <br></br>
           <input type="file" onChange={e => setMedia(e.target.files[0])} />
         </div>
-        <button type="submit"> Create Artwork</button>
+        <button type="submit" className="loginbtn">
+          {' '}
+          Create Artwork
+        </button>
       </form>
     </div>
   );

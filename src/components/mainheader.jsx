@@ -4,6 +4,7 @@ import { MainHeaderContext } from '../RootLayout';
 import { useContext } from 'react';
 import Modal from 'react-modal';
 import AuthForm from '../components/authForm.jsx';
+import { FiSearch } from 'react-icons/fi';
 
 function MainHeader() {
   const heading = useContext(MainHeaderContext);
@@ -30,7 +31,7 @@ function MainHeader() {
             value={heading.queryText}
           />
           <button onClick={heading.loadsearchProducts}>
-            <i className="fa fa-search"></i>
+            <FiSearch />
           </button>
         </div>
         <div className="right-links">
@@ -75,6 +76,15 @@ function MainHeader() {
         onRequestClose={heading.closeSignupModal}
         contentLabel="Signup Modal"
         ariaHideApp={false}
+        style={{
+          overlay: {
+            backgroundColor: '#0b140fe1',
+          },
+          content: {
+            background: '#241E1F',
+            padding: '0px',
+          },
+        }}
       >
         <AuthForm
           handleLogin={heading.handleLogin}
