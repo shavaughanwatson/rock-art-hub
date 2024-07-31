@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import MainHeader from './components/mainheader.jsx';
 import Footer from './components/footer.jsx';
-import { createContext } from 'react';
+import { createContext, useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from './authService';
@@ -12,6 +12,27 @@ export const MainHeaderContext = createContext();
 function RootLayout() {
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [showProfileModal, setProfileModal] = useState(false);
+  const [query, setQuery] = useState('');
+  const [isLoggedIn, setisLoggedIn] = useState(false); // Track user authentication state
+  const [user, setUser] = useState(null); // Track user authentication state
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [firstName, setfirstName] = useState('');
+  const [lastName, setlastName] = useState('');
+  const [dateOfBirth, setdateOfBirth] = useState('');
+  const [occupation, setoccupation] = useState('');
+  const [avatar, setavatar] = useState('');
+  const [bio, setbio] = useState('');
+
+  useEffect(() => {
+    const user = authService.getCurrentUser();
+    console.log(user);
+    if (user) {
+      setUser(user);
+      setisLoggedIn(true);
+    }
+  }, []);
 
   const openSignupModal = e => {
     e.preventDefault();
@@ -30,19 +51,6 @@ function RootLayout() {
   const closeProfileModal = () => {
     setProfileModal(false);
   };
-
-  const [query, setQuery] = useState('');
-  const [isLoggedIn, setisLoggedIn] = useState(false); // Track user authentication state
-  const [user, setUser] = useState(null); // Track user authentication state
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
-  const [firstName, setfirstName] = useState('');
-  const [lastName, setlastName] = useState('');
-  const [dateOfBirth, setdateOfBirth] = useState('');
-  const [occupation, setoccupation] = useState('');
-  const [avatar, setavatar] = useState('');
-  const [bio, setbio] = useState('');
 
   const navigate = useNavigate();
 
@@ -89,7 +97,7 @@ function RootLayout() {
     try {
       const userData = await authService.login(email, password);
       setUser(userData);
-      console.log(userData.user);
+      console.log(userData);
 
       setisLoggedIn(true);
       closeSignupModal();
@@ -99,19 +107,23 @@ function RootLayout() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loglevel');
     setUser(null);
     setisLoggedIn(false);
     console.log('User logged out');
   };
 
-  async function goToSearchPage() {
+  const goToSearchPage = () => {
     if (query === '') {
       alert(`No text has been inputed`);
       return;
     }
+
+    localStorage.setItem('searchQuery', query);
     navigate('/search');
-  }
+  };
 
   return (
     <MainHeaderContext.Provider
@@ -136,6 +148,8 @@ function RootLayout() {
         setoccupation: setoccupation,
         setavatar: setavatar,
         setbio: setbio,
+        setisLoggedIn: setisLoggedIn,
+        setQuery: setQuery,
         showSignupModal: showSignupModal,
         showProfileModal: showProfileModal,
         isLoggedIn: isLoggedIn,

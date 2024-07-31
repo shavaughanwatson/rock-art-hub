@@ -13,6 +13,7 @@ import Artwork from './artwork';
 import Search from './search';
 import ProfilePage from './profile_page';
 import ArtworkDetail, { loader as ArtDetailData } from './artworkdetailpage';
+import UserProfile, { loader as UserProfileData } from './profile_page';
 import ResourceDetail, {
   loader as ResourceDetailData,
 } from './resourcedetailpage';
@@ -40,8 +41,9 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/profile',
+        path: '/:id',
         element: <ProfilePage />,
+        loader: UserProfileData,
       },
 
       {

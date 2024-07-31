@@ -9,12 +9,14 @@ const authService = {
       identifier,
       password,
     });
-    console.log(response.data);
-    const token = response.data.token;
-
+    console.log(response.data.jwt);
+    const token = response.data.jwt;
     localStorage.setItem('token', token);
 
-    return response.data;
+    console.log(response.data.user);
+    localStorage.setItem('user', JSON.stringify(response.data.user));
+
+    return response.data.user;
   },
 
   signup: async (
@@ -39,8 +41,14 @@ const authService = {
       avatar,
       bio,
     });
-    console.log(response.data);
-    return response.data;
+
+    console.log(response.data.jwt);
+    const token = response.data.jwt;
+    localStorage.setItem('token', token);
+
+    console.log(response.data.user);
+    localStorage.setItem('user', JSON.stringify(response.data.user));
+    return response.data.user;
   },
 
   edit: async (userId, firstName, lastName, occupation, bio) => {
@@ -59,6 +67,10 @@ const authService = {
       }
     );
     return response.data;
+  },
+
+  getCurrentUser: () => {
+    return JSON.parse(localStorage.getItem('user'));
   },
 };
 

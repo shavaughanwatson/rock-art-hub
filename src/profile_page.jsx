@@ -7,24 +7,27 @@ import Modal from 'react-modal';
 import EditProfileForm from './components/edit_profile_form';
 import PostForm from './components/post_form';
 import { FaPlus } from 'react-icons/fa6';
+import { useLoaderData } from 'react-router-dom';
+import api from './api';
 
 function ProfilePage() {
   const login = useContext(MainHeaderContext);
+  const user = useLoaderData();
   const [artworks, setArtworks] = useState([]);
 
   const [showEditProfileModal, setShowEditProfileModal] = useState(false);
   const [showPostForm, setPostForm] = useState(false);
 
-  const [firstName, setFirstName] = useState(login.user.user.firstName);
-  const [lastName, setLastName] = useState(login.user.user.lastName);
-  const [occupation, setOccupation] = useState(login.user.user.occupation);
-  const [bio, setBio] = useState(login.user.user.bio);
+  // const [firstName, setFirstName] = useState(login.user.firstName);
+  // const [lastName, setLastName] = useState(login.user.lastName);
+  //const [occupation, setOccupation] = useState(login.user.occupation);
+  //const [bio, setBio] = useState(login.user.bio);
 
   useEffect(() => {
     const fetchUserArtworks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1337/api/artworks?filters[author][$eq]=${login.user.user.username}&populate=*`,
+          `http://localhost:1337/api/artworks?filters[author][$eq]=${login.user.username}&populate=*`,
           {
             headers: {
               Authorization: `Bearer ${API_KEY}`,
@@ -40,7 +43,7 @@ function ProfilePage() {
     };
 
     fetchUserArtworks();
-  }, [login.user.user.username]);
+  }, [user.username]);
 
   const openEditProfileModal = e => {
     e.preventDefault();
@@ -64,7 +67,7 @@ function ProfilePage() {
     e.preventDefault();
 
     const response = await axios.put(
-      `http://localhost:1337/api/users/${login.user.user.id}`,
+      `http://localhost:1337/api/users/${login.user.id}`,
       {
         firstName: login.firstName,
         lastName: login.lastName,
@@ -79,10 +82,10 @@ function ProfilePage() {
     );
     console.log(response.data);
     console.log(response.data.bio);
-    setFirstName(response.data.firstName);
-    setLastName(response.data.lastName);
-    setOccupation(response.data.occupation);
-    setBio(response.data.bio);
+    //setFirstName(response.data.firstName);
+    //setLastName(response.data.lastName);
+    //setOccupation(response.data.occupation);
+    //setBio(response.data.bio);
   };
 
   const handleDelete = async artworkId => {
@@ -103,31 +106,47 @@ function ProfilePage() {
       <div className="wrapper">
         <div className="profile">
           <div className="profile-pic">
-            <img src={login.user.user.avatar}></img>
+            <img src={user.avatar}></img>
           </div>
 
           <div className="profile-info">
             <h2>
-              {firstName} {lastName}
+              {user.firstName} {user.lastName}
             </h2>
 
-            <h3>{occupation}</h3>
+            <h3>{user.occupation}</h3>
             <h4>Bio:</h4>
-            <p>{bio}</p>
-            <div className="edit-btn-box">
-              <button className="cta-btn login" onClick={openEditProfileModal}>
-                Edit
-              </button>
-            </div>
+            <p>{user.bio}</p>
+            {login.isLoggedIn ? (
+              <>
+                {' '}
+                <div className="edit-btn-box">
+                  <button
+                    className="cta-btn login"
+                    onClick={openEditProfileModal}
+                  >
+                    Edit
+                  </button>
+                </div>
+              </>
+            ) : (
+              ''
+            )}
           </div>
         </div>
 
         <div className="user-artworks">
           <h3>
             Artwork
-            <button className="cta-btn login" onClick={openPostForm}>
-              Post Artwork <FaPlus />
-            </button>
+            {login.isLoggedIn ? (
+              <>
+                <button className="cta-btn login" onClick={openPostForm}>
+                  Post Artwork <FaPlus />
+                </button>
+              </>
+            ) : (
+              ''
+            )}
           </h3>
 
           <ul className="artwork-list">
@@ -210,6 +229,15 @@ function ProfilePage() {
       </Modal>
     </>
   );
+}
+
+export async function loader({ params }) {
+  const response = await api.get(`/users/${params.id}?populate=*`);
+  const data = response.data;
+  console.log(response);
+  console.log(data); // Adjust according to Strapi response format
+
+  return data;
 }
 
 export default ProfilePage;

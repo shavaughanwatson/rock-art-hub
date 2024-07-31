@@ -24,8 +24,21 @@ const SearchPage = () => {
         console.log(response);
         console.log(response.data.data); // Adjust according to Strapi response format
 
-        setartList(response.data.data);
+        localStorage.setItem(
+          'searchResults',
+          JSON.stringify(response.data.data)
+        );
+
+        setartList(JSON.parse(localStorage.getItem('searchResults')));
+
         setTotalPages(response.data.meta.pagination.pageCount);
+
+        const currentSearchQuery = localStorage.getItem('searchQuery');
+
+        if (currentSearchQuery) {
+          setartList(JSON.parse(localStorage.getItem('searchResults')));
+          searchquery.setQuery(currentSearchQuery);
+        }
       } catch (error) {
         console.error('Error fetching artworks:', error);
       }

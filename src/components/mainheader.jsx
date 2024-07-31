@@ -40,12 +40,12 @@ function MainHeader() {
               <>
                 <li>
                   <div className="user">
-                    <Link to="/profile">
+                    <Link to={`${heading.user.id}`}>
                       <figure className="avatar">
-                        <img src={heading.user.user.avatar} />
+                        <img src={heading.user.avatar} />
                       </figure>
                     </Link>
-                    <h2>Welcome, {heading.user.user.username}!</h2>
+                    <h2>Welcome, {heading.user.username}!</h2>
                   </div>
                 </li>
                 <li>

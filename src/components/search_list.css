@@ -4,6 +4,7 @@
   list-style-type: none;
   gap: 30px;
   margin-top: 56px;
+  justify-content: start;
 }
 
 .resource-list li {
