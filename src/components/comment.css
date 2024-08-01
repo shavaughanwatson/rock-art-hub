@@ -1,9 +1,23 @@
 .comment-section {
-  margin-top: 26px;
+  margin-top: 16px;
+}
+
+.comment-section button[type='submit'] {
+  width: 150px;
+  border-radius: 4px;
+}
+
+.comment-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .comment-submitbtn {
-  width: 100px;
+  background-color: #073ca6;
+  font-family: 'Work Sans', sans-serif;
+  color: whitesmoke;
+  font-weight: 100;
 }
 
 .comment-box {

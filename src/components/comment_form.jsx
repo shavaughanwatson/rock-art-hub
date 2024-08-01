@@ -61,8 +61,6 @@ const CommentForm = ({ artworkId, user, setComments }) => {
 
   return (
     <div className="comment-section">
-      <h3 className="comment-heading">Submit a Comment</h3>
-
       <form onSubmit={handleSubmit} className="comment-form">
         <textarea
           className="comment-box"

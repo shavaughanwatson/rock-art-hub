@@ -6,7 +6,8 @@
 
 .profile {
   display: flex;
-  margin-top: 30px;
+  padding: 12px;
+  background-color: #3e3a31;
 }
 
 .profile button {
@@ -144,7 +145,6 @@
 
   .user-artworks li {
     border: solid;
-    width: ;
   }
 
   .user-artworks li button {
@@ -153,7 +153,6 @@
   }
 
   .user-artworks img {
-    border: solid purple;
     height: 150px;
     width: 100%;
   }

@@ -18,6 +18,10 @@
   height: 550px;
 }
 
+.artwork-image img {
+  width: 100%;
+}
+
 .artwork-specs {
   width: 50%;
   display: flex;

@@ -5,9 +5,11 @@
   padding: 0px;
 }
 
+/*
 div {
   border: 1px solid red;
 }
+*/
 
 body {
   background-color: #241e1f;
@@ -38,9 +40,9 @@ p {
 }
 
 .category-menu {
-  padding: 8px;
+  padding: 12px;
   text-align: center;
-  border-right: #db9806;
+  background-color: #24211e;
 }
 
 .menu-links li {

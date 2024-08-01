@@ -27,10 +27,7 @@
 
 .image-list {
   display: flex;
-}
-
-.image-list div {
-  flex-basis: 33%;
+  flex-direction: column;
 }
 
 .image-1 {

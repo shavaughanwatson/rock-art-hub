@@ -71,6 +71,7 @@ const ArtworkDetail = () => {
 
         {user.user ? (
           <div className="comment-section">
+            <h3 className="comment-heading">Submit a Comment</h3>
             <CommentForm
               artworkId={artwork.id}
               user={user.user.user}

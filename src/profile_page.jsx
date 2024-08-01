@@ -158,20 +158,21 @@ function ProfilePage() {
             ) : (
               <>
                 {artworks.map((artwork, index) => (
-                  <Link to={`/artwork/${artwork.id}`} key={index}>
-                    <li>
+                  <li key={index}>
+                    <Link to={`/artwork/${artwork.id}`}>
                       <img
                         src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
                         alt="Artwork"
                       />
-                      <div className="info">
-                        <p className="title">{artwork.attributes.title}</p>
-                        <button onClick={() => handleDelete(artwork.id)}>
-                          Delete
-                        </button>
-                      </div>
-                    </li>
-                  </Link>
+                    </Link>
+                    <div className="info">
+                      <p className="title">{artwork.attributes.title}</p>
+
+                      <button onClick={() => handleDelete(artwork.id)}>
+                        Delete
+                      </button>
+                    </div>
+                  </li>
                 ))}
               </>
             )}
