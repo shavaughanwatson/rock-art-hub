@@ -50,8 +50,8 @@ const ArtworkPage = () => {
   };
 
   return (
-    <div className="artwork-page">
-      <div className="artwork">
+    <div className="artwork">
+      <div className="artwork-page">
         <div className="artwork-title">
           <h1>Artwork</h1>
           <p>Check out our gallery with various arts about geology.</p>

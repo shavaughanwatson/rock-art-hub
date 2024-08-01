@@ -41,13 +41,13 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/:id',
+        path: ':id',
         element: <ProfilePage />,
         loader: UserProfileData,
       },
 
       {
-        path: '/:id', // defaults to the first json document
+        path: 'artwork/:id', // defaults to the first json document
         loader: ArtDetailData,
         element: <ArtworkDetail />,
       },

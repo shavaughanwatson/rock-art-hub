@@ -1,15 +1,12 @@
 /* ArtworkPage.css */
 
-.artwork-page {
-  text-align: center;
-  padding: 20px;
-  display: flex;
-  width: 100%;
-}
-
 .artwork {
   padding: 8px;
-  width: 100%;
+}
+
+.artwork-page {
+  text-align: center;
+  width: 1650px;
 }
 
 .artwork-title {
@@ -60,24 +57,44 @@
 }
 
 @media (max-width: 375px) {
+  .artwork {
+    padding: 0px;
+    height: 100%;
+  }
+
   .artwork-title {
     margin-bottom: 10px;
   }
 
+  .artwork-title h1 {
+    margin-top: 12px;
+    font-size: 18px;
+  }
+
+  .artwork-title p {
+    font-size: 12px;
+  }
+
   .artwork-page {
     flex-direction: column;
+    width: 100%;
   }
 
   .artwork-categories {
-    flex-wrap: wrap;
+    overflow: scroll;
   }
 
   .artwork-categories li {
     margin-bottom: 3px;
+    height: fit-content;
+    margin-right: 15px;
   }
 
-  hr {
-    margin-bottom: 12px;
+  .artwork-categories button {
+    margin-bottom: 3px;
+    height: 26px;
+    font-size: 12px;
+    height: 50px;
   }
 
   .artwork-categories li {

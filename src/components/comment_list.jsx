@@ -4,10 +4,13 @@ import { useState } from 'react';
 import './comment.css';
 import { MdDeleteForever } from 'react-icons/md';
 import { MdEdit } from 'react-icons/md';
+import { useContext } from 'react';
+import { MainHeaderContext } from '../RootLayout';
 
-const CommentList = ({ comments, setComments, user }) => {
+const CommentList = ({ comments, setComments }) => {
   const [isEditing, setIsEditing] = useState(null);
   const [editedContent, setEditedContent] = useState('');
+  const user = useContext(MainHeaderContext);
 
   const handleDelete = async commentId => {
     try {

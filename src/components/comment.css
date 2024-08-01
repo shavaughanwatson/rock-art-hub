@@ -52,3 +52,13 @@
   background-color: #086597;
   transition: 0.3s;
 }
+
+@media (max-width: 375px) {
+  .comment-section {
+    height: fit-content;
+  }
+
+  .comment-section h1 {
+    font-size: 16px;
+  }
+}

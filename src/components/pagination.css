@@ -26,3 +26,9 @@
   font-family: 'Work Sans', sans-serif;
   font-weight: 100;
 }
+
+@media (max-width: 375px) {
+  .pagination {
+    padding: 8px;
+  }
+}

@@ -10,15 +10,17 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="about-us">
-      <div className="about-us-image">
-        <img src={AboutUsPic} alt="About Us" />
+    <>
+      <div className="about-us">
+        <div className="about-us-image">
+          <img src={AboutUsPic} alt="About Us" />
+        </div>
+        <div className="about-us-info">
+          <h2>{aboutUs.title}</h2>
+          <p>{aboutUs.description}</p>
+        </div>
       </div>
-      <div className="about-us-info">
-        <h2>{aboutUs.title}</h2>
-        <p>{aboutUs.description}</p>
-      </div>
-    </div>
+    </>
   );
 };
 

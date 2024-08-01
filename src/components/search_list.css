@@ -5,11 +5,16 @@
   gap: 30px;
   margin-top: 56px;
   justify-content: start;
+  display: flex;
+  overflow: scroll;
 }
 
 .resource-list li {
   margin-bottom: 20px;
   max-width: 315px; /* Limit width for larger screens */
+}
+.error {
+  text-align: center;
 }
 
 .resource-list img {

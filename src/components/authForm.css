@@ -115,6 +115,7 @@ button[type='submit'] {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
+  border: none;
 }
 
 .close {
@@ -123,4 +124,64 @@ button[type='submit'] {
   right: 10px;
   font-size: 24px;
   cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 375px) {
+  .modal-container {
+    flex-direction: column;
+  }
+
+  .cta-section {
+    height: 150px;
+  }
+
+  .cta-section h1 {
+    margin-top: 44px;
+  }
+
+  .cta-section,
+  .form-section {
+    width: 100%;
+    text-align: center;
+  }
+  .form-group {
+    padding: 8px;
+  }
+  .form-section {
+    padding: 0px;
+  }
+
+  .form-section h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .cta-section p {
+    font-size: 12px;
+  }
+
+  .form-section input {
+    border: none;
+    border-radius: 4px;
+  }
+
+  .form-section textarea {
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .form-section select {
+    border: none;
+    border-radius: 4px;
+  }
+
+  .form-section h2 {
+    margin-bottom: 20px;
+  }
+
+  .form-group-1 {
+    flex-direction: column;
+  }
 }

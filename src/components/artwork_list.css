@@ -1,13 +1,13 @@
 .artwork-list {
   list-style-type: none;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  overflow: scroll;
+  gap: 20px;
 }
 
 .artwork-list li {
   margin-bottom: 20px;
-  max-width: 280px;
+  width: fit-content;
 }
 
 .artwork-list img {
@@ -26,5 +26,14 @@
 @media (max-width: 375px) {
   .artwork-list li {
     width: 100%;
+    font-size: 12px;
+  }
+
+  .artwork-list img {
+    height: 350px;
+  }
+
+  .author {
+    font-size: 12px;
   }
 }

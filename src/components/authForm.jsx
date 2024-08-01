@@ -34,7 +34,7 @@ function AuthForm() {
               &times;
             </span>
 
-            <h2>Log In</h2>
+            <h2>Sign Up</h2>
             <form onSubmit={login.handleSignup}>
               <div className="form-group-1">
                 <div>
@@ -163,7 +163,7 @@ function AuthForm() {
             <span className="close" onClick={login.closeSignupModal}>
               &times;
             </span>
-            <h2>Sign Up</h2>
+            <h2>Log In</h2>
 
             <form onSubmit={login.handleLogin}>
               <div className="form-group">

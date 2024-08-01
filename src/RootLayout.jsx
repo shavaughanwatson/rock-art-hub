@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import MainHeader from './components/mainheader.jsx';
-import Footer from './components/footer.jsx';
+
 import { createContext, useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -169,8 +169,6 @@ function RootLayout() {
       <MainHeader />
       <div className="outlet-wrapper">
         <div className="category-menu">
-          <h1>Menu</h1>
-
           <ul className="menu-links">
             <Link to="/artwork">
               <li>
@@ -185,9 +183,9 @@ function RootLayout() {
             </Link>
           </ul>
         </div>
+
         <Outlet />
       </div>
-      <Footer />
     </MainHeaderContext.Provider>
   );
 }

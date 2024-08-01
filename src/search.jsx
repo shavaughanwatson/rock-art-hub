@@ -17,28 +17,19 @@ const SearchPage = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
+        const currentSearchQuery = localStorage.getItem('searchQuery');
+        searchquery.setQuery(currentSearchQuery);
+
         const response = await api.get(
-          `/artworks?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}&filters[$or][0][title][$contains]=${searchquery.queryText}&filters[$or][1][author][$contains]=${searchquery.queryText}&filters[$or][2][category][$contains]=${searchquery.queryText}`
+          `/artworks?populate=*&pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}&filters[$or][0][title][$contains]=${currentSearchQuery}&filters[$or][1][author][$contains]=${currentSearchQuery}&filters[$or][2][category][$contains]=${currentSearchQuery}`
         );
 
         console.log(response);
         console.log(response.data.data); // Adjust according to Strapi response format
 
-        localStorage.setItem(
-          'searchResults',
-          JSON.stringify(response.data.data)
-        );
-
-        setartList(JSON.parse(localStorage.getItem('searchResults')));
+        setartList(response.data.data);
 
         setTotalPages(response.data.meta.pagination.pageCount);
-
-        const currentSearchQuery = localStorage.getItem('searchQuery');
-
-        if (currentSearchQuery) {
-          setartList(JSON.parse(localStorage.getItem('searchResults')));
-          searchquery.setQuery(currentSearchQuery);
-        }
       } catch (error) {
         console.error('Error fetching artworks:', error);
       }
@@ -48,18 +39,20 @@ const SearchPage = () => {
   }, [currentPage]);
 
   return (
-    <div className="resource-page">
-      <div className="resource-title">
-        <h1>Search</h1>
-        <hr />
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={page => setCurrentPage(page)}
-        />
+    <div className="artwork">
+      <div className="artwork-page">
+        <div className="artwork-title">
+          <h1>Search</h1>
+          <hr />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={page => setCurrentPage(page)}
+          />
+        </div>
+
+        <SearchList artList={artList} />
       </div>
-      <SearchList artList={artList} />
-      <div className="pagination">{/* Pagination components */}</div>
     </div>
   );
 };

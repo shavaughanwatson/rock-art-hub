@@ -1,4 +1,4 @@
-.wrapper {
+.profile-wrapper {
   background-color: #241e1f;
   width: 100%;
   align-items: center;
@@ -65,7 +65,9 @@
   margin-top: 40px;
   padding: 15px;
 }
-
+.user-artworks ul {
+  border: solid;
+}
 .user-artworks h3 {
   display: flex;
   align-items: center;
@@ -75,4 +77,92 @@
 .user-artworks button:hover {
   background-color: #3ab56beb;
   transition: 0.3s;
+}
+
+.user-artworks li button {
+  padding: 12px 24px 12px 24px;
+  color: whitesmoke;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  background-color: #2488ebeb;
+  border: none;
+  border-radius: 4px;
+}
+
+@media (max-width: 375px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile-wrapper {
+    height: 100%;
+  }
+
+  .profile-pic img {
+    height: 100px;
+  }
+
+  .profile-info {
+    margin-top: 14px;
+  }
+
+  .profile-info h2 {
+    font-size: 26px;
+  }
+
+  .profile-info h3 {
+    font-size: 12px;
+  }
+
+  .profile-info h4 {
+    font-size: 10px;
+  }
+  .profile-info p {
+    font-size: 10px;
+  }
+
+  .profile-info button {
+    font-size: 10px;
+  }
+
+  .user-artworks {
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .user-artworks h3 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .user-artworks ul {
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .user-artworks li {
+    border: solid;
+    width: ;
+  }
+
+  .user-artworks li button {
+    margin-top: 4px;
+    padding: 8px 24px 8px 24px;
+  }
+
+  .user-artworks img {
+    border: solid purple;
+    height: 150px;
+    width: 100%;
+  }
+
+  .user-artworks {
+    font-size: 10px;
+  }
+
+  .user-artworks button {
+    font-size: 10px;
+  }
 }

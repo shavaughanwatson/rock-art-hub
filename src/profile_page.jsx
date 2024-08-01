@@ -9,6 +9,7 @@ import PostForm from './components/post_form';
 import { FaPlus } from 'react-icons/fa6';
 import { useLoaderData } from 'react-router-dom';
 import api from './api';
+import { Link } from 'react-router-dom';
 
 function ProfilePage() {
   const login = useContext(MainHeaderContext);
@@ -18,23 +19,23 @@ function ProfilePage() {
   const [showEditProfileModal, setShowEditProfileModal] = useState(false);
   const [showPostForm, setPostForm] = useState(false);
 
-  // const [firstName, setFirstName] = useState(login.user.firstName);
-  // const [lastName, setLastName] = useState(login.user.lastName);
-  //const [occupation, setOccupation] = useState(login.user.occupation);
-  //const [bio, setBio] = useState(login.user.bio);
+  const [firstName, setFirstName] = useState(user.firstName);
+  const [lastName, setLastName] = useState(user.lastName);
+  const [occupation, setOccupation] = useState(user.occupation);
+  const [bio, setBio] = useState(user.bio);
 
   useEffect(() => {
     const fetchUserArtworks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1337/api/artworks?filters[author][$eq]=${login.user.username}&populate=*`,
+          `http://localhost:1337/api/artworks?filters[author][$eq]=${user.username}&populate=*`,
           {
             headers: {
               Authorization: `Bearer ${API_KEY}`,
             },
           }
         );
-        console.log(login.user);
+        console.log(user);
         console.log(response.data.data);
         setArtworks(response.data.data);
       } catch (error) {
@@ -82,10 +83,10 @@ function ProfilePage() {
     );
     console.log(response.data);
     console.log(response.data.bio);
-    //setFirstName(response.data.firstName);
-    //setLastName(response.data.lastName);
-    //setOccupation(response.data.occupation);
-    //setBio(response.data.bio);
+    setFirstName(response.data.firstName);
+    setLastName(response.data.lastName);
+    setOccupation(response.data.occupation);
+    setBio(response.data.bio);
   };
 
   const handleDelete = async artworkId => {
@@ -103,7 +104,7 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="profile-wrapper">
         <div className="profile">
           <div className="profile-pic">
             <img src={user.avatar}></img>
@@ -111,12 +112,12 @@ function ProfilePage() {
 
           <div className="profile-info">
             <h2>
-              {user.firstName} {user.lastName}
+              {firstName} {lastName}
             </h2>
 
-            <h3>{user.occupation}</h3>
+            <h3>{occupation}</h3>
             <h4>Bio:</h4>
-            <p>{user.bio}</p>
+            <p>{bio}</p>
             {login.isLoggedIn ? (
               <>
                 {' '}
@@ -157,18 +158,20 @@ function ProfilePage() {
             ) : (
               <>
                 {artworks.map((artwork, index) => (
-                  <li key={index}>
-                    <img
-                      src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
-                      alt="Artwork"
-                    />
-                    <div className="info">
-                      <p className="title">{artwork.attributes.title}</p>
-                      <button onClick={() => handleDelete(artwork.id)}>
-                        Delete
-                      </button>
-                    </div>
-                  </li>
+                  <Link to={`/artwork/${artwork.id}`} key={index}>
+                    <li>
+                      <img
+                        src={`http://localhost:1337${artwork.attributes.Media.data.attributes.url}`}
+                        alt="Artwork"
+                      />
+                      <div className="info">
+                        <p className="title">{artwork.attributes.title}</p>
+                        <button onClick={() => handleDelete(artwork.id)}>
+                          Delete
+                        </button>
+                      </div>
+                    </li>
+                  </Link>
                 ))}
               </>
             )}
@@ -225,7 +228,7 @@ function ProfilePage() {
           },
         }}
       >
-        <PostForm setArtworks={setArtworks} />
+        <PostForm setArtworks={setArtworks} username={user.username} />
       </Modal>
     </>
   );

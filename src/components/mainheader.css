@@ -52,19 +52,31 @@
   align-items: center;
 }
 
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 550px;
+}
+
 .search-bar input {
   padding: 8px;
-  width: 534px;
-  height: 12%;
+  width: 2000px;
+  height: 24px;
   border-radius: 4px 0px 0px 4px;
   border: none;
 }
 
-.search-bar button {
+.search-btn {
   border: none;
   background-color: #6acb91;
-  padding: 7.7px;
   border-radius: 0px 6px 6px 0px;
+
+  padding: 0px 12px 0px 0px;
+}
+
+.search-bar button:hover {
+  background-color: #3c9761;
+  transition: 0.3s;
 }
 
 .user {
@@ -87,6 +99,16 @@
   .header {
     flex-direction: column;
     text-align: center;
+    height: fit-content;
+  }
+
+  .search-bar form {
+    width: 250px;
+  }
+
+  .search-bar input {
+    padding: 8px;
+    height: 24px;
   }
 
   .main-nav {
@@ -104,6 +126,10 @@
   .left-links,
   .right-links {
     margin-top: 10px;
+  }
+
+  .right-links button {
+    font-size: 10px;
   }
 
   .search-bar {

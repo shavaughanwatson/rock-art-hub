@@ -70,7 +70,7 @@ const ArtworkDetail = () => {
         </div>
 
         {user.user ? (
-          <div>
+          <div className="comment-section">
             <CommentForm
               artworkId={artwork.id}
               user={user.user.user}
@@ -84,7 +84,7 @@ const ArtworkDetail = () => {
             />
           </div>
         ) : (
-          <div>
+          <div className="comment-section">
             <h1>Need to login in to comment</h1>
             <UnAuthCommentList setComments={setComments} comments={comments} />
           </div>

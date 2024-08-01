@@ -24,15 +24,17 @@ function MainHeader() {
         </div>
 
         <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={handleQueryText}
-            value={heading.queryText}
-          />
-          <button onClick={heading.loadsearchProducts}>
-            <FiSearch />
-          </button>
+          <form onSubmit={heading.loadsearchProducts}>
+            <input
+              type="text"
+              placeholder="Search..."
+              onChange={handleQueryText}
+              value={heading.queryText}
+            />
+            <button type="submit" className="search-btn">
+              <FiSearch />
+            </button>
+          </form>
         </div>
         <div className="right-links">
           <ul>
